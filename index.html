@@ -1,1 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering Girls in IT - Reducing Gender Gap Across South Asia</title>
+    <style>
+        :root {
+            --primary: #EF5350;
+            --secondary: #FF7043;
+            --body: #F8F3F0;
+            --text: #1D1D1B;
+            --secondary-dark: #9C3A26;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--body);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -35%;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(255, 112, 67, 0.3) 0%, transparent 70%);
+            animation: empowerPulse 22s ease-in-out infinite;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -70%;
+            left: -30%;
+            width: 900px;
+            height: 900px;
+            background: conic-gradient(from 150deg, rgba(255, 255, 255, 0.15), transparent, rgba(255, 255, 255, 0.1));
+            animation: rotate 50s linear infinite;
+        }
+
+        @keyframes empowerPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.7) rotate(180deg); opacity: 0.4; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            height: 95px;
+            width: auto;
+            background: white;
+            padding: 28px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 112, 67, 0.3), transparent);
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-22px) scale(1.2) rotateY(15deg);
+            box-shadow: 0 45px 90px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo:hover::before {
+            opacity: 1;
+        }
+
+        .hero-text {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(4rem, 11vw, 7rem);
+            margin-bottom: 3rem;
+            font-weight: 900;
+            letter-spacing: -6px;
+            background: linear-gradient(45deg, #fff, #FF7043, #fff, #EF5350, #fff);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textEmpowerment 12s ease-in-out infinite;
+        }
+
+        @keyframes textEmpowerment {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-text .subtitle {
+            font-size: clamp(1.6rem, 5.5vw, 2.6rem);
+            opacity: 0.95;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .hero-text .empowerment-info {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2.5rem 5rem;
+            border-radius: 70px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            display: inline-block;
+            backdrop-filter: blur(35px);
+            border: 5px solid rgba(255, 255, 255, 0.35);
+            transition: all 0.7s ease;
+            margin-bottom: 4rem;
+        }
+
+        .hero-text .empowerment-info:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-12px) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-text .tech-skills {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 5rem;
+        }
+
+        .tech-skill {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2.5rem 5rem;
+            border-radius: 60px;
+            font-weight: 900;
+            backdrop-filter: blur(30px);
+            border: 5px solid rgba(255, 255, 255, 0.35);
+            transition: all 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-skill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            transition: left 1.4s ease;
+        }
+
+        .tech-skill:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-15px) scale(1.15);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .tech-skill:hover::before {
+            left: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--secondary-dark);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 12px 45px rgba(156, 58, 38, 0.8);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            padding: 3rem 5rem;
+            transition: all 0.8s ease;
+            font-weight: 900;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transition: all 0.8s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 112, 67, 0.4), rgba(239, 83, 80, 0.4));
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .nav-item:hover {
+            color: var(--secondary);
+            transform: translateY(-6px);
+        }
+
+        .nav-item:hover::before {
+            width: 100%;
+        }
+
+        .nav-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        main {
+            padding: 10rem 0;
+        }
+
+        .section {
+            margin-bottom: 15rem;
+            background: white;
+            border-radius: 50px;
+            padding: 8rem;
+            box-shadow: 0 40px 140px rgba(239, 83, 80, 0.3);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(80px);
+            opacity: 0;
+            animation: slideInUp 3s ease forwards;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 18px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 700% 100%;
+            animation: empowermentWave 8s ease-in-out infinite;
+        }
+
+        @keyframes empowermentWave {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 1s;
+        }
+
+        .section:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        .section h2 {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 7rem;
+            position: relative;
+            font-weight: 900;
+        }
+
+        .section h3 {
+            font-size: 3.5rem;
+            color: var(--secondary-dark);
+            margin: 7rem 0 5rem 0;
+            font-weight: 900;
+        }
+
+        /* Gender Gap Crisis */
+        .gender-gap-crisis {
+            background: linear-gradient(135deg, rgba(239, 83, 80, 0.2), rgba(255, 112, 67, 0.2));
+            padding: 8rem;
+            border-radius: 45px;
+            margin: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gender-gap-crisis::before {
+            content: '';
+            position: absolute;
+            top: -120%;
+            left: -120%;
+            width: 340%;
+            height: 340%;
+            background: radial-gradient(circle, rgba(255, 112, 67, 0.15) 0%, transparent 70%);
+            animation: rotate 60s linear infinite;
+        }
+
+        .gap-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 6rem;
+            margin: 7rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gap-stat {
+            background: white;
+            padding: 6rem;
+            border-radius: 35px;
+            text-align: center;
+            transition: all 0.9s ease;
+            border: 6px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gap-stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 112, 67, 0.35), transparent);
+            transition: left 1.4s ease;
+        }
+
+        .gap-stat:hover {
+            transform: translateY(-35px) scale(1.1);
+            border-color: var(--secondary);
+            box-shadow: 0 50px 100px rgba(239, 83, 80, 0.45);
+        }
+
+        .gap-stat:hover::before {
+            left: 100%;
+        }
+
+        .gap-icon {
+            font-size: 8rem;
+            margin-bottom: 3.5rem;
+            display: block;
+        }
+
+        .gap-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .gap-desc {
+            font-size: 1.5rem;
+            color: var(--text);
+            line-height: 2.1;
+        }
+
+        /* Regional Network */
+        .regional-empowerment {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 5rem;
+            margin: 8rem 0;
+        }
+
+        .country-empowerment {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem;
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 1s ease;
+        }
+
+        .country-empowerment::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            right: -100%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 1s ease;
+        }
+
+        .country-empowerment:hover {
+            transform: translateY(-40px) scale(1.15);
+            box-shadow: 0 60px 120px rgba(239, 83, 80, 0.8);
+        }
+
+        .country-empowerment:hover::before {
+            transform: scale(2.5) rotate(45deg);
+        }
+
+        .country-flag {
+            font-size: 6rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .country-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .country-institutions {
+            position: relative;
+            z-index: 2;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            line-height: 1.9;
+        }
+
+        /* Training Programs */
+        .training-programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 7rem;
+            margin: 9rem 0;
+        }
+
+        .program-category {
+            background: var(--body);
+            padding: 7rem;
+            border-radius: 40px;
+            border-left: 18px solid var(--primary);
+            transition: all 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(239, 83, 80, 0.18), rgba(255, 112, 67, 0.18));
+            transition: width 1s ease;
+        }
+
+        .program-category:hover {
+            transform: translateX(35px);
+            box-shadow: 0 40px 80px rgba(239, 83, 80, 0.35);
+            border-left-color: var(--secondary);
+        }
+
+        .program-category:hover::before {
+            width: 100%;
+        }
+
+        .program-category h4 {
+            color: var(--primary);
+            margin-bottom: 3.5rem;
+            font-size: 2.5rem;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-list {
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-item {
+            margin: 2.5rem 0;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .program-item:hover {
+            transform: translateX(15px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 15px 30px rgba(239, 83, 80, 0.2);
+        }
+
+        .program-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .program-stats {
+            font-size: 1.3rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* Impact Statistics */
+        .impact-empowerment {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 5rem;
+            margin: 8rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, var(--secondary-dark), var(--primary));
+            color: white;
+            padding: 6rem;
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 1s ease;
+        }
+
+        .impact-stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: translateX(-100%);
+            transition: transform 1.6s ease;
+        }
+
+        .impact-stat:hover::before {
+            transform: translateX(100%);
+        }
+
+        .impact-stat:hover {
+            transform: scale(1.2);
+        }
+
+        .impact-number {
+            font-size: 6rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 2.5rem;
+        }
+
+        .impact-label {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        /* SDG Section */
+        .sdg-empowerment {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 5rem;
+            margin: 8rem 0;
+        }
+
+        .sdg-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem;
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.9s ease;
+        }
+
+        .sdg-card::before {
+            content: '';
+            position: absolute;
+            top: -300%;
+            left: 0;
+            width: 100%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: top 0.9s ease;
+        }
+
+        .sdg-card:hover {
+            transform: translateY(-30px) scale(1.12);
+        }
+
+        .sdg-card:hover::before {
+            top: 0;
+        }
+
+        .sdg-number {
+            font-size: 5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sdg-title {
+            position: relative;
+            z-index: 2;
+            font-weight: 900;
+            font-size: 2rem;
+        }
+
+        /* Future Vision */
+        .future-empowerment {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12rem;
+            border-radius: 50px;
+            text-align: center;
+            margin: 12rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .future-empowerment::before {
+            content: '';
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 400%;
+            height: 400%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            animation: rotate 80s linear infinite;
+        }
+
+        .future-empowerment h3 {
+            color: white;
+            font-size: 5rem;
+            margin-bottom: 6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .future-empowerment p {
+            font-size: 2.2rem;
+            line-height: 2.2;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-dark);
+            color: white;
+            text-align: center;
+            padding: 12rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 80%, rgba(255, 112, 67, 0.35) 100%);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-section {
+                gap: 45px;
+            }
+
+            .logo {
+                height: 85px;
+            }
+
+            .section {
+                padding: 6rem;
+            }
+
+            .hero-text .tech-skills {
+                gap: 3.5rem;
+            }
+
+            .tech-skill {
+                padding: 2rem 4rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-item {
+                padding: 2.5rem 4rem;
+                font-size: 0.9rem;
+            }
+
+            .training-programs {
+                grid-template-columns: 1fr;
+            }
+
+            .regional-empowerment {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+
+            .gap-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.6rem;
+            }
+
+            .section h2 {
+                font-size: 4rem;
+            }
+
+            .gender-gap-crisis {
+                padding: 6rem;
+            }
+
+            .future-empowerment {
+                padding: 8rem;
+            }
+
+            .future-empowerment h3 {
+                font-size: 3.5rem;
+            }
+
+            .future-empowerment p {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="images/logos/tein-logo.png" alt="TEIN CC" class="logo">
+                    <img src="images/logos/asia-connect-logo.png" alt="Asi@Connect" class="logo">
+                    <img src="images/logos/eu-logo.png" alt="European Union" class="logo">
+                </div>
+                <div class="hero-text">
+                    <h1>Empowering Girls in IT</h1>
+                    <p class="subtitle">Reducing Gender Gap in IT and ITES Sectors Across South Asia</p>
+                    <div class="empowerment-info">WP5 Project - 5th Call - 4 Countries</div>
+                    <div class="tech-skills">
+                        <span class="tech-skill">Python</span>
+                        <span class="tech-skill">IoT</span>
+                        <span class="tech-skill">AI & ML</span>
+                        <span class="tech-skill">Blockchain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#overview" class="nav-item">Overview</a>
+                <a href="#crisis" class="nav-item">Gender Gap</a>
+                <a href="#network" class="nav-item">Network</a>
+                <a href="#training" class="nav-item">Training</a>
+                <a href="#impact" class="nav-item">Impact</a>
+                <a href="#future" class="nav-item">Future</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="overview" class="section">
+                <h2>Addressing South Asia's IT Gender Disparity</h2>
+                <p>This transformative project addresses the critical gender gap in IT and ITES sectors across four South Asian countries—India, Nepal, Bhutan, and Bangladesh—by empowering female students through comprehensive training, skill development, capacity building, and innovative bilingual e-content development. The initiative emphasizes cutting-edge emerging technologies including Python programming, IoT, AI, ML, Blockchain, and Data Science to prepare the next generation of female technology leaders.</p>
+
+                <div class="gender-gap-crisis">
+                    <h3 style="position: relative; z-index: 2; color: var(--primary); font-size: 4rem; margin-bottom: 5rem;">Breaking Barriers in Technology</h3>
+                    <div class="gap-stats">
+                        <div class="gap-stat">
+                            <div class="gap-icon">👩‍💻</div>
+                            <div class="gap-title">6,700+ Beneficiaries</div>
+                            <div class="gap-desc">Reached over 6,700 beneficiaries through livestreamed workshops, hands-on training sessions, and comprehensive e-learning modules across four South Asian countries.</div>
+                        </div>
+                        <div class="gap-stat">
+                            <div class="gap-icon">🎯</div>
+                            <div class="gap-title">Emerging Technologies</div>
+                            <div class="gap-desc">Focused training in high-demand technologies including Python programming, IoT, Artificial Intelligence, Machine Learning, Blockchain, and Data Science for future-ready skills.</div>
+                        </div>
+                        <div class="gap-stat">
+                            <div class="gap-icon">🌐</div>
+                            <div class="gap-title">Regional Collaboration</div>
+                            <div class="gap-desc">Leveraged TEIN/NREN infrastructure to create sustainable cross-border collaborative academic ecosystems and teacher training programs for long-term impact.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Project Mission & Vision</h3>
+                <p>The initiative targets long-term sustainability through comprehensive teacher training programs and collaborative academic ecosystems, ensuring that the impact extends far beyond the initial project period. By creating a network of empowered female educators and technology professionals, the project establishes a foundation for continued gender equity advancement in the rapidly evolving technology landscape of South Asia.</p>
+            </section>
+
+            <section id="crisis" class="section">
+                <h2>The Gender Technology Divide</h2>
+                <p>The underrepresentation of women in IT and ITES sectors across South Asia represents a critical challenge that limits both individual opportunities and regional technological advancement. This project directly addresses systemic barriers that prevent girls and women from entering and succeeding in technology careers through targeted skill development and awareness initiatives.</p>
+
+                <div class="impact-empowerment">
+                    <div class="impact-stat">
+                        <span class="impact-number">3,097</span>
+                        <span class="impact-label">Girls Trained in Tech</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">1,442</span>
+                        <span class="impact-label">Female Teachers Empowered</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">4</span>
+                        <span class="impact-label">Countries United</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">2</span>
+                        <span class="impact-label">Bilingual E-Content Platforms</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="network" class="section">
+                <h2>Regional Academic Partnership</h2>
+                <p>The project establishes a comprehensive partnership network across South Asia, bringing together leading educational institutions to create a collaborative ecosystem for gender-inclusive technology education. This network leverages the expertise and infrastructure of premier institutions to maximize reach and impact.</p>
+
+                <div class="regional-empowerment">
+                    <div class="country-empowerment">
+                        <div class="country-flag">🇮🇳</div>
+                        <div class="country-name">India</div>
+                        <div class="country-institutions">PDPM IIITDM, IIT Guwahati - Leading technical excellence and innovation in emerging technologies</div>
+                    </div>
+                    <div class="country-empowerment">
+                        <div class="country-flag">🇧🇩</div>
+                        <div class="country-name">Bangladesh</div>
+                        <div class="country-institutions">BUET (Bangladesh University of Engineering and Technology) - Premier engineering education and research</div>
+                    </div>
+                    <div class="country-empowerment">
+                        <div class="country-flag">🇧🇹</div>
+                        <div class="country-name">Bhutan</div>
+                        <div class="country-institutions">Royal University of Bhutan - National higher education leadership and development</div>
+                    </div>
+                    <div class="country-empowerment">
+                        <div class="country-flag">🇳🇵</div>
+                        <div class="country-name">Nepal</div>
+                        <div class="country-institutions">Tribhuvan University, Kathmandu University - Comprehensive academic excellence and research</div>
+                    </div>
+                </div>
+
+                <h3>TEIN/NREN Infrastructure Utilization</h3>
+                <p>The project strategically leverages the robust TEIN/NREN infrastructure across South Asia to ensure seamless connectivity and high-quality educational delivery. This network foundation enables synchronized live streaming, interactive workshops, and collaborative learning experiences that transcend geographical boundaries while maintaining consistent educational standards across all participating countries.</p>
+            </section>
+
+            <section id="training" class="section">
+                <h2>Comprehensive Training Programs</h2>
+                <p>The project delivers two distinct but complementary training tracks designed to create both immediate impact and long-term sustainability. Skill Development Programs (SDPs) directly empower female students with cutting-edge technical capabilities, while Capacity Building Programs (CBPs) train educators to continue this mission beyond the project timeline.</p>
+
+                <div class="training-programs">
+                    <div class="program-category">
+                        <h4>Skill Development Programs (SDPs)</h4>
+                        <div class="program-list">
+                            <div class="program-item">
+                                <div class="program-name">Python Programming</div>
+                                <div class="program-stats">1,495 total participants with 1,364 female students (91.2% female participation rate)</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Internet of Things (IoT)</div>
+                                <div class="program-stats">1,134 total participants with 762 female students (67.2% female participation rate)</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Artificial Intelligence & Machine Learning</div>
+                                <div class="program-stats">1,092 total participants with 971 female students (88.9% female participation rate)</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Total SDP Impact</div>
+                                <div class="program-stats">3,721 total students trained with 3,097 girls empowered (83.2% female participation)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-category">
+                        <h4>Capacity Building Programs (CBPs)</h4>
+                        <div class="program-list">
+                            <div class="program-item">
+                                <div class="program-name">ICT Tools for Teaching & Research</div>
+                                <div class="program-stats">Comprehensive training for educators on integrating technology into curriculum and research methodologies</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">AI & Machine Learning for Educators</div>
+                                <div class="program-stats">Advanced training enabling teachers to deliver cutting-edge AI and ML education to students</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Data Science Fundamentals</div>
+                                <div class="program-stats">Practical data science training equipping educators with industry-relevant analytical skills</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Blockchain Technology</div>
+                                <div class="program-stats">Emerging technology training preparing educators for next-generation digital innovation education</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="program-name">Total CBP Impact</div>
+                                <div class="program-stats">2,922 total educators trained with 1,442 female teachers empowered (49.4% female participation)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Key Project Milestones</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 5rem; margin: 6rem 0;">
+                    <div style="background: var(--body); padding: 4rem; border-radius: 25px; border-left: 12px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 2rem; font-size: 1.8rem;">Project Launch & Development</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 1.5rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.8); border-radius: 12px;">
+                                <strong>April 22, 2022:</strong> Official project launch workshop with stakeholder engagement and program overview
+                            </li>
+                            <li style="margin: 1.5rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.8); border-radius: 12px;">
+                                <strong>E-Content Development:</strong> Completed bilingual educational content for IoT and Python programming
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: var(--body); padding: 4rem; border-radius: 25px; border-left: 12px solid var(--secondary);">
+                        <h4 style="color: var(--secondary-dark); margin-bottom: 2rem; font-size: 1.8rem;">Outreach & Visibility</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 1.5rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.8); border-radius: 12px;">
+                                <strong>June 28, 2023:</strong> School Teacher Conference for educator engagement and sustainability planning
+                            </li>
+                            <li style="margin: 1.5rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.8); border-radius: 12px;">
+                                <strong>June 23 & 28, 2023:</strong> Press Conferences for public awareness and project visibility enhancement
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="section">
+                <h2>Transformative Impact & Achievements</h2>
+
+                <div class="impact-empowerment">
+                    <div class="impact-stat">
+                        <span class="impact-number">6,700+</span>
+                        <span class="impact-label">Total Beneficiaries</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">83.2%</span>
+                        <span class="impact-label">Female Student Participation</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">49.4%</span>
+                        <span class="impact-label">Female Teacher Participation</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="impact-number">4</span>
+                        <span class="impact-label">Advanced Technology Areas</span>
+                    </div>
+                </div>
+
+                <h3>Strategic Achievements</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 4rem; margin: 6rem 0;">
+                    <div style="background: linear-gradient(135deg, rgba(239, 83, 80, 0.1), rgba(255, 112, 67, 0.1)); padding: 4rem; border-radius: 25px;">
+                        <h4 style="color: var(--primary); margin-bottom: 2rem; font-size: 2rem;">Direct Student Impact</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                                <strong>3,097 Girls Empowered:</strong> Successfully trained female students in Python, IoT, and AI/ML technologies, creating a pipeline of skilled women technologists.
+                            </li>
+                            <li style="margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                                <strong>High Engagement Rates:</strong> Achieved exceptional female participation rates ranging from 67% to 91% across different technology domains.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(255, 112, 67, 0.1), rgba(156, 58, 38, 0.1)); padding: 4rem; border-radius: 25px;">
+                        <h4 style="color: var(--secondary-dark); margin-bottom: 2rem; font-size: 2rem;">Educator Empowerment</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                                <strong>1,442 Female Teachers Trained:</strong> Built sustainable capacity through educator training in four specialized IT/ITES areas for long-term impact.
+                            </li>
+                            <li style="margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                                <strong>Cross-Border Collaboration:</strong> Established collaborative academic ecosystems via TEIN/NREN platforms for ongoing knowledge sharing.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Challenges & Strategic Solutions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(550px, 1fr)); gap: 6rem; margin: 6rem 0;">
+                    <div style="background: linear-gradient(135deg, rgba(255, 112, 67, 0.15), rgba(239, 83, 80, 0.1)); padding: 4.5rem; border-radius: 30px; border-left: 15px solid var(--secondary);">
+                        <h4 style="color: var(--secondary-dark); margin-bottom: 3rem; font-size: 2.2rem;">Implementation Challenges</h4>
+                        <div style="space-y: 2.5rem;">
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Funding Delays:</strong> 4-month delay in pre-financing significantly disrupted initial timeline and required extensive rescheduling of training programs.
+                            </div>
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Coordination Challenges:</strong> Bhutan colleges withdrew participation mid-project, requiring redistribution of resources and program adjustments.
+                            </div>
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Academic Conflicts:</strong> Calendar conflicts forced cancellation of planned school awareness programs, limiting outreach to younger students.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(239, 83, 80, 0.15), rgba(156, 58, 38, 0.1)); padding: 4.5rem; border-radius: 30px; border-left: 15px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 3rem; font-size: 2.2rem;">Adaptive Strategies</h4>
+                        <div style="space-y: 2.5rem;">
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Flexible Programming:</strong> Adapted training schedules and delivery methods to accommodate funding delays while maintaining program quality and impact.
+                            </div>
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Enhanced Focus:</strong> Concentrated resources on remaining three countries to maximize impact and ensure comprehensive coverage for participating institutions.
+                            </div>
+                            <div style="margin: 2.5rem 0; padding: 3rem; background: rgba(255, 255, 255, 0.9); border-radius: 18px;">
+                                <strong>Digital Alternatives:</strong> Increased emphasis on bilingual e-content development and online platforms to extend reach despite scheduling limitations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Contributing to Sustainable Development Goals</h3>
+                <div class="sdg-empowerment">
+                    <div class="sdg-card">
+                        <span class="sdg-number">SDG 4</span>
+                        <span class="sdg-title">Quality Education</span>
+                    </div>
+                    <div class="sdg-card">
+                        <span class="sdg-number">SDG 5</span>
+                        <span class="sdg-title">Gender Equality</span>
+                    </div>
+                    <div class="sdg-card">
+                        <span class="sdg-number">SDG 9</span>
+                        <span class="sdg-title">Industry, Innovation and Infrastructure</span>
+                    </div>
+                    <div class="sdg-card">
+                        <span class="sdg-number">SDG 17</span>
+                        <span class="sdg-title">Partnerships for the Goals</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="future" class="section">
+                <h2>Sustainable Future & Expansion</h2>
+
+                <h3>Sustainability Framework</h3>
+                <p>The project establishes a comprehensive sustainability framework through trained faculty who will continue regional training programs, bilingual e-content platforms for ongoing access, and strengthened cross-border academic collaborations. This approach ensures that the empowerment of women in technology continues well beyond the formal project period.</p>
+
+                <h3>Expansion Strategy</h3>
+                <p>Future initiatives include seeking additional funding sources for program expansion, strengthening school outreach through renewed awareness campaigns, and developing new joint research and training proposals that build on the established regional network. The project also plans to expand coverage to additional South Asian countries and integrate new emerging technologies into the curriculum.</p>
+
+                <div class="future-empowerment">
+                    <h3>Vision for Gender-Inclusive Technology in South Asia</h3>
+                    <p>The Girls Empowerment in IT project is pioneering a transformation in South Asia's technology landscape, where gender equity becomes a cornerstone of innovation and progress. Through systematic capacity building, regional collaboration, and sustained educational excellence, this initiative is creating a future where women lead technological advancement, drive digital innovation, and serve as role models for the next generation. This foundation will transform how South Asian societies approach technology education, ensuring that talent and creativity, regardless of gender, drive the region's digital transformation and economic growth.</p>
+                </div>
+
+                <h3>Long-term Impact Initiatives</h3>
+                <div class="training-programs">
+                    <div class="program-category">
+                        <h4>Continued Faculty-Led Training</h4>
+                        <p style="position: relative; z-index: 2; font-size: 1.4rem; line-height: 1.8;">Trained faculty members across participating institutions will continue delivering technology training programs, ensuring sustainable capacity building and ongoing empowerment of female students in emerging technology areas.</p>
+                    </div>
+                    <div class="program-category">
+                        <h4>Enhanced School Outreach</h4>
+                        <p style="position: relative; z-index: 2; font-size: 1.4rem; line-height: 1.8;">Renewed efforts to launch comprehensive awareness campaigns targeting school-age girls, creating early interest in technology careers and building a pipeline of future women technologists.</p>
+                    </div>
+                    <div class="program-category">
+                        <h4>Regional Research Collaboration</h4>
+                        <p style="position: relative; z-index: 2; font-size: 1.4rem; line-height: 1.8;">Development of joint research initiatives and collaborative academic programs that leverage the established network to advance gender-inclusive technology research and innovation across South Asia.</p>
+                    </div>
+                    <div class="program-category">
+                        <h4>Technology Curriculum Evolution</h4>
+                        <p style="position: relative; z-index: 2; font-size: 1.4rem; line-height: 1.8;">Continuous integration of emerging technologies and industry-relevant skills into training programs, ensuring that women are prepared for future technology leadership roles and market demands.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Empowering Girls in IT - Building Tomorrow's Technology Leaders</h3>
+                <p>Transforming South Asia's technology landscape through gender-inclusive education, skill development, and regional collaboration for sustainable digital advancement.</p>
+                <p style="margin-top: 5rem; opacity: 0.9; font-size: 1.6rem;">
+                    Multi-country initiative spanning India, Nepal, Bhutan, and Bangladesh<br>
+                    Creating pathways for 6,700+ beneficiaries toward technology leadership
+                </p>
+                <p style="margin-top: 3rem; font-size: 1.3rem; opacity: 0.8;">
+                    WP5 Project - 5th Call | Gender Equality • Technology Education • Regional Empowerment • Digital Innovation
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -300px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Enhanced interactive effects for gap stats
+        document.querySelectorAll('.gap-stat').forEach(stat => {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-35px) scale(1.1)';
+                this.style.borderColor = 'var(--secondary)';
+                this.style.boxShadow = '0 50px 100px rgba(239, 83, 80, 0.45)';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.borderColor = 'transparent';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Country empowerment interactions
+        document.querySelectorAll('.country-empowerment').forEach(country => {
+            country.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-40px) scale(1.15)';
+                this.style.boxShadow = '0 60px 120px rgba(239, 83, 80, 0.8)';
+            });
+            
+            country.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Program category hover effects
+        document.querySelectorAll('.program-category').forEach(category => {
+            category.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(35px)';
+                this.style.boxShadow = '0 40px 80px rgba(239, 83, 80, 0.35)';
+                this.style.borderLeftColor = 'var(--secondary)';
+            });
+            
+            category.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.boxShadow = 'none';
+                this.style.borderLeftColor = 'var(--primary)';
+            });
+        });
+
+        // Program item interactions
+        document.querySelectorAll('.program-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(15px)';
+                this.style.background = 'rgba(255, 255, 255, 1)';
+                this.style.boxShadow = '0 15px 30px rgba(239, 83, 80, 0.2)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.8)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Impact stat effects
+        document.querySelectorAll('.impact-stat').forEach(stat => {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.2)';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // SDG card effects
+        document.querySelectorAll('.sdg-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-30px) scale(1.12)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Progressive section loading animation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const triggerBottom = window.innerHeight / 5 * 4;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < triggerBottom) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize page animations and effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stagger section animations
+            setTimeout(() => {
+                document.querySelectorAll('.section').forEach((section, index) => {
+                    setTimeout(() => {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, index * 600);
+                });
+            }, 1200);
+
+            // Add floating animation to header logos
+            document.querySelectorAll('.logo').forEach((logo, index) => {
+                logo.style.animationDelay = `${index * 1}s`;
+            });
+        });
+
+        // Create empowerment background effects
+        function createEmpowermentEffects() {
+            const header = document.querySelector('header');
+            for (let i = 0; i < 8; i++) {
+                const element = document.createElement('div');
+                element.style.position = 'absolute';
+                element.style.width = `${30 + Math.random() * 120}px`;
+                element.style.height = `${30 + Math.random() * 120}px`;
+                element.style.background = 'rgba(255, 255, 255, 0.07)';
+                element.style.borderRadius = '50%';
+                element.style.top = Math.random() * 100 + '%';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animation = `float ${20 + Math.random() * 15}s ease-in-out infinite`;
+                element.style.animationDelay = Math.random() * 15 + 's';
+                header.appendChild(element);
+            }
+        }
+
+        // Initialize empowerment background effects
+        createEmpowermentEffects();
+    </script>
+</body>
+</html>
